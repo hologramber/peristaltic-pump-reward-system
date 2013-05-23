@@ -1,0 +1,62 @@
+Most commercial water/fluid reward systems used in research settings cost a few hundred dollars (or more) and aren't easily modified. This is a fairly quick hack, but it does the job well and won't cost you >$100.. much less if you already have some of the components sitting around. Using a peristaltic pump is preferred, as the motor never actually comes into contact with the fluid itself.
+
+---------------------------------------------
+---------------EQUIPMENT---------------------
+---------------------------------------------
+Common Equipment (All Versions):
+- Peristaltic Liquid Pump (12VDC / 300mA) with Silicone Tubing (max flow 100mL/min) [ http://www.adafruit.com/products/1150 ]
+- 12VDC Adapter (old D-Link wall adapter in my case) to power the motor
+- Momentary Push Button/Switch for manual fluid delivery (optional)
+
+Equipment Used for Raspberry Pi Version:
+- Raspberry Pi Model B [ http://www.newark.com/jsp/search/productdetail.jsp?sku=43W5302 ]
+- Gertboard [ http://www.newark.com/jsp/search/productdetail.jsp?sku=46W9829 ]
+
+Equipment Used for Arduino Version:
+- Arduino Duemilanova w/ATMEGA328 [ http://arduino.cc/en/Main/arduinoBoardDuemilanove ]
+- Seeed Studio Motor Shield [ http://www.seeedstudio.com/depot/motor-shield-p-913.html ] 
+
+*** If you're not using a gertboard or motor shield of some sort, you'll need either a power transistor (basic on/off) or a motor driver chip such as the L293D to work with the DC motor which drives the peristaltic pump. [ http://www.ti.com/lit/ds/symlink/l293d.pdf ]
+
+
+
+---------------------------------------------
+------------ARDUINO VERSION------------------
+---------------------------------------------
+I used an older arduino (duemilanova) I had sitting around, but any version should be fine. If you use the Seeed motor shield you'll need a compatible pinout -- the duemilanova or the uno both work well. I wouldn't specifically recommend the motor shield, it's overkill for this, but it's cheap/simple and if you have one laying around it works fine. If you do go for this particular motor shield, the wiki has good information: [ http://www.seeedstudio.com/wiki/Motor_Shield_V1.0 ].
+
+Connect your DC power adapter to the motor shield Vs / Gnd pins, and connect the motor to the M1+ / M1- pins. Connect the motor shield to the arduino. Upload arduino code via USB. If you leave the J6 jumper connected, you don't need to provide a separate power source to the arduino -- it will pull power from the motor shield. If you want a manual "push button to dispense fluid" feature, you can pick up a button module from Seeed and connect it via their Grove system to make life easy, but I used a 10kOhm resistor and an old button switch I had laying around.
+
+			Switch
+			  |
+			  |------------
+			  |			  |
+			  |			  |
+			  |          / \
+			 5V		    /	\
+				   10kOhm	 Arduino Pin #5			
+				  Resistor
+					 |
+					 |
+					Gnd
+
+The physical assembly was done using odd metal pieces I had laying around. I'm not particularly proud of it, but it works fine (it doesn't really need a physical assembly to be functional).
+					
+---------------------------------------------
+-----------RASPBERRY PI VERSION--------------
+---------------------------------------------
+A gertboard is overkill for this, but again, I already had it sitting around. :) I used a raspberry pi model B, with a pre-assembled gertboard to drive the motor. If you go the gertboard route, their manual is valuable: [  ]. 
+
+
+
+---------------------------------------------
+--------------GENERAL NOTES------------------
+---------------------------------------------
+You can use pulse width modulation w/the motor to speed up or slow down the flow rate; if you connect the motor the other way it will move fluid the other direction. It uses 3/16″ (4.7mm) outer diameter silicone tubing, which connects nicely to a metal drinking tube pulled out of a rodent water bottle.
+
+
+
+
+
+
+
