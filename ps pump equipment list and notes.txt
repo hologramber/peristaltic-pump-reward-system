@@ -47,17 +47,30 @@ Connect your DC power adapter to the motor shield Vs / Gnd pins, and connect the
 					 |
 					Gnd
 
-The physical assembly was done using odd metal pieces I had laying around. I'm not particularly proud of it, but it works fine (it doesn't really need a physical assembly to be functional).
-	
-
+The physical assembly was done using odd metal pieces I had laying around. I'm not particularly proud of it, but it works fine (it doesn't really need a physical assembly to be functional). See pictures for reference.
 
 	
 ----------------------------------------------------------------
 -----------------RASPBERRY PI/GERTBOARD VERSION-----------------
 ----------------------------------------------------------------
-A gertboard is overkill for this, but again, I already had it sitting around. :) I used a raspberry pi model B, with a pre-assembled gertboard to drive the motor. If you go the gertboard route, their manual is valuable: [  ]. 
+A gertboard is overkill for this, but again, I already had it sitting around. :) I used a raspberry pi model B, with a pre-assembled gertboard to drive the motor. If you go the gertboard route, their manual is valuable: [ http://www.element14.com/community/docs/DOC-51727/l/assembled-gertboard-user-manual-with-schematics ]. 
 
-
+0. Connect your Gertboard to your Raspberry Pi.
+1. Add one jumper wire between Gertboard pins (see pictures for reference): GP17 <-> MOTB
+2. Add another jumper wire between Gertboard pins: GP18 <-> MOTA
+3. Connect pump motor (+) to screw terminal MOTA and pump motor (-) to screw terminal MOTB.
+4. Connect the positive lead from your 12VDC adapter to screw terminal MOT+ and neutral to screw terminal ground.
+5a. Install wiringPi either w/apt-get from the command line:
+>> sudo apt-get update
+>> sudo apt-get install python-dev python-pip
+>>sudo pip install wiringpi
+5b. Or install wiringPi from the git repository:
+>> sudo apt-get install git-core
+>> git clone git://git.drogon.net/wiringPi
+>> cd wiringPi
+>> ./build
+6. Play with the other Gertboard examples (including motor ones) if you are so inclined:
+>> get http://raspi.tv/download/GB_Python.zip
 
 ----------------------------------------------------------------
 --------------------------GENERAL NOTES-------------------------
