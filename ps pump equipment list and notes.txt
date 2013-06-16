@@ -72,6 +72,28 @@ A gertboard is overkill for this, but again, I already had it sitting around. :)
 6. Play with the other Gertboard examples (including motor ones) if you are so inclined:
 >> get http://raspi.tv/download/GB_Python.zip
 
+
+
+----------------------------------------------------------------
+-------------------ARDUINO OR PI W/L293D CHIP-------------------
+----------------------------------------------------------------
+As a starting off point, the DC motor tutorials at Adafruit can be used for either the Arduino or the Raspberry Pi. The Adafruit Raspberry Pi tutorial makes use of their Occidentalis distro, which has a custom PWM kernel module included. This might make your life easier, but I prefer Raspbian and wiringPi (below).
+Raspberry Pi: http://learn.adafruit.com/adafruit-raspberry-pi-lesson-9-controlling-a-dc-motor/overview
+Arduino: http://learn.adafruit.com/adafruit-arduino-lesson-15-dc-motor-reversing/
+
+I used the Raspberry Pi with the L293D, with a base (updated) Raspbian install.
+1a. Install wiringPi either w/apt-get from the command line:
+>> sudo apt-get update
+>> sudo apt-get install python-dev python-pip
+>>sudo pip install wiringpi
+1b. Or install wiringPi from the git repository:
+>> sudo apt-get install git-core
+>> git clone git://git.drogon.net/wiringPi
+>> cd wiringPi
+>> ./build
+2. 
+
+
 ----------------------------------------------------------------
 --------------------------GENERAL NOTES-------------------------
 ----------------------------------------------------------------
