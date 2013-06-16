@@ -21,9 +21,33 @@ Equipment Used for Arduino/SeeedStudio Motor Shield Version:
 - Arduino Duemilanova w/ATMEGA328 [ http://arduino.cc/en/Main/arduinoBoardDuemilanove ]
 - Seeed Studio Motor Shield [ http://www.seeedstudio.com/depot/motor-shield-p-913.html ] 
 
----------
+--------- *** I use a Raspberry Pi w/the L293D IC.
 Equipment Used for Arduino or Raspberry Pi w/L293D Version:
 - L293D[ http://www.ti.com/lit/ds/symlink/l293d.pdf ; http://www.adafruit.com/products/807 ]
+
+
+----------------------------------------------------------------
+-------------------ARDUINO OR PI W/L293D CHIP-------------------
+----------------------------------------------------------------
+As a starting off point, the DC motor tutorials at Adafruit can be used for either the Arduino or the Raspberry Pi. The Adafruit Raspberry Pi tutorial makes use of their Occidentalis distro, which has a custom PWM kernel module included. This might make your life easier, but I prefer Raspbian and wiringPi (below).
+Raspberry Pi: http://learn.adafruit.com/adafruit-raspberry-pi-lesson-9-controlling-a-dc-motor/overview
+Arduino: http://learn.adafruit.com/adafruit-arduino-lesson-15-dc-motor-reversing/
+
+L293D pinout can be found here: http://www.ti.com/lit/ds/symlink/l293d.pdf
+
+I used the Raspberry Pi with the L293D, with a base (updated) Raspbian install.
+1a. Install wiringPi either w/apt-get from the command line:
+>> sudo apt-get update
+>> sudo apt-get install python-dev python-pip
+>> sudo pip install wiringpi
+1b. Or install wiringPi2 from the git repository (this is what I did):
+>> sudo apt-get install git-core
+>> git clone git://github.com/WiringPi/WiringPi2-Python.git
+>> cd wiringPi2-Python
+>> sudo python setup.py install
+2. The L293D_pump_code_wiringPi.py script works similar to the Gertboard script.
+3. The breadboard version can be seen in the L293D*.jpg pictures & the Fritzing wiring diagram can be found in L293D_wiring_diagram.png.
+4. The schematic and soldered versions can also be seen in their respective pictures.
 
 
 
@@ -50,6 +74,7 @@ Connect your DC power adapter to the motor shield Vs / Gnd pins, and connect the
 The physical assembly was done using odd metal pieces I had laying around. I'm not particularly proud of it, but it works fine (it doesn't really need a physical assembly to be functional). See pictures for reference.
 
 	
+	
 ----------------------------------------------------------------
 -----------------RASPBERRY PI/GERTBOARD VERSION-----------------
 ----------------------------------------------------------------
@@ -71,28 +96,6 @@ A gertboard is overkill for this, but again, I already had it sitting around. :)
 >> ./build
 6. Play with the other Gertboard examples (including motor ones) if you are so inclined:
 >> get http://raspi.tv/download/GB_Python.zip
-
-
-----------------------------------------------------------------
--------------------ARDUINO OR PI W/L293D CHIP-------------------
-----------------------------------------------------------------
-As a starting off point, the DC motor tutorials at Adafruit can be used for either the Arduino or the Raspberry Pi. The Adafruit Raspberry Pi tutorial makes use of their Occidentalis distro, which has a custom PWM kernel module included. This might make your life easier, but I prefer Raspbian and wiringPi (below).
-Raspberry Pi: http://learn.adafruit.com/adafruit-raspberry-pi-lesson-9-controlling-a-dc-motor/overview
-Arduino: http://learn.adafruit.com/adafruit-arduino-lesson-15-dc-motor-reversing/
-
-I used the Raspberry Pi with the L293D, with a base (updated) Raspbian install.
-1a. Install wiringPi either w/apt-get from the command line:
->> sudo apt-get update
->> sudo apt-get install python-dev python-pip
->> sudo pip install wiringpi
-1b. Or install wiringPi2 from the git repository (this is what I did):
->> sudo apt-get install git-core
->> git clone git://github.com/WiringPi/WiringPi2-Python.git
->> cd wiringPi2-Python
->> sudo python setup.py install
-2. The L293D_pump_code_wiringPi.py script works similar to the Gertboard script.
-3. The breadboard version can be seen in the L293D*.jpg pictures & the Fritzing wiring diagram can be found in L293D_wiring_diagram.png.
-4. The schematic and soldered versions can also be seen in their respective pictures.
 
 
 
