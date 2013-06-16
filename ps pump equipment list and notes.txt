@@ -73,7 +73,6 @@ A gertboard is overkill for this, but again, I already had it sitting around. :)
 >> get http://raspi.tv/download/GB_Python.zip
 
 
-
 ----------------------------------------------------------------
 -------------------ARDUINO OR PI W/L293D CHIP-------------------
 ----------------------------------------------------------------
@@ -86,12 +85,12 @@ I used the Raspberry Pi with the L293D, with a base (updated) Raspbian install.
 >> sudo apt-get update
 >> sudo apt-get install python-dev python-pip
 >>sudo pip install wiringpi
-1b. Or install wiringPi from the git repository:
+1b. Or install wiringPi2 from the git repository (this is what I did):
 >> sudo apt-get install git-core
->> git clone git://git.drogon.net/wiringPi
->> cd wiringPi
->> ./build
-2. 
+>> git clone git://github.com/WiringPi/WiringPi2-Python.git
+>> cd wiringPi2-Python
+>> sudo python setup.py install
+2. The L293D_pump_code_wiringPi.py script works similar to the Gertboard script.
 
 
 ----------------------------------------------------------------
