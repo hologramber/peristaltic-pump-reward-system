@@ -84,13 +84,16 @@ I used the Raspberry Pi with the L293D, with a base (updated) Raspbian install.
 1a. Install wiringPi either w/apt-get from the command line:
 >> sudo apt-get update
 >> sudo apt-get install python-dev python-pip
->>sudo pip install wiringpi
+>> sudo pip install wiringpi
 1b. Or install wiringPi2 from the git repository (this is what I did):
 >> sudo apt-get install git-core
 >> git clone git://github.com/WiringPi/WiringPi2-Python.git
 >> cd wiringPi2-Python
 >> sudo python setup.py install
 2. The L293D_pump_code_wiringPi.py script works similar to the Gertboard script.
+3. The breadboard version can be seen in the L293D*.jpg pictures & the Fritzing wiring diagram can be found in L293D_wiring_diagram.png.
+4. The schematic and soldered versions can also be seen in their respective pictures.
+
 
 
 ----------------------------------------------------------------
