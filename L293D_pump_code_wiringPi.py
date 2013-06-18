@@ -66,7 +66,7 @@ def main():
 					infotext.trial_increment()								# increment the trial number	
 					infotext.render_text(red, winSurface)
 					pygame.display.update()
-					motor.motor_loop(800,1)									# motor.motor_loop(size of the step, seconds to run the motor)
+					motor.motor_loop(1000,1)									# motor.motor_loop(size of the step, seconds to run the motor)
                 if event.key == K_ESCAPE or event.key == K_q:				# ESC to quit program
                     motor.reset_motor()
                     pygame.event.post(pygame.event.Event(QUIT))
