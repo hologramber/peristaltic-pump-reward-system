@@ -1,4 +1,4 @@
-Most commercial water/fluid reward systems used in research settings cost a few hundred dollars (or more) and aren't easily modified. This is a fairly quick hack, but it does the job well and won't cost you >$100.. much less if you already have some of the components sitting around. Using a peristaltic pump is preferred, as the motor never actually comes into contact with the fluid itself.
+﻿Most commercial water/fluid reward systems used in research settings cost a few hundred dollars (or more) and aren't easily modified. This is a fairly quick hack, but it does the job well and won't cost you >$100.. much less if you already have some of the components sitting around. Using a peristaltic pump is preferred, as the motor never actually comes into contact with the fluid itself.
 
 ----------------------------------------------------------------
 ---------------------------EQUIPMENT----------------------------
@@ -10,6 +10,9 @@ Common Equipment (All Versions):
 - Some way of driving the motor (Motor Shield, Gertboard, L293D, or Power Transistor -- see below)
 - Momentary Push Button/Switch for manual fluid delivery (optional)
 
+--------- *** I use a Raspberry Pi w/the L293D IC.
+Equipment Used for Arduino or Raspberry Pi w/L293D Version:
+- L293D[ http://www.ti.com/lit/ds/symlink/l293d.pdf ; http://www.adafruit.com/products/807 ]
 
 ---------
 Equipment Used for Raspberry Pi/Gertboard Version:
@@ -21,9 +24,6 @@ Equipment Used for Arduino/SeeedStudio Motor Shield Version:
 - Arduino Duemilanova w/ATMEGA328 [ http://arduino.cc/en/Main/arduinoBoardDuemilanove ]
 - Seeed Studio Motor Shield [ http://www.seeedstudio.com/depot/motor-shield-p-913.html ] 
 
---------- *** I use a Raspberry Pi w/the L293D IC.
-Equipment Used for Arduino or Raspberry Pi w/L293D Version:
-- L293D[ http://www.ti.com/lit/ds/symlink/l293d.pdf ; http://www.adafruit.com/products/807 ]
 
 
 ----------------------------------------------------------------
@@ -61,15 +61,15 @@ Connect your DC power adapter to the motor shield Vs / Gnd pins, and connect the
 			Switch
 			  |
 			  |------------
-			  |			  |
-			  |			  |
-			  |          / \
-			 5V		    /	\
-				   10kOhm	 Arduino Pin #5			
-				  Resistor
-					 |
-					 |
-					Gnd
+			  |	       |
+			  |	       |
+			  |           / \
+			 5V	     /	 \
+			       10kOhm	  Arduino Pin #5			
+			      Resistor
+				 |
+				 |
+				Gnd
 
 The physical assembly was done using odd metal pieces I had laying around. I'm not particularly proud of it, but it works fine (it doesn't really need a physical assembly to be functional). See pictures for reference.
 
