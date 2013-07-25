@@ -12,7 +12,7 @@ https://kelpforest.org/projects/peristalticpump/index.html
 - - - [Option 3] Your alternative controller of choice.
 - Some way of routing power to/driving the motor:
 - - - [Option 1] L293D 
-       [ http://www.ti.com/lit/ds/symlink/l293d.pdf ; http://www.adafruit.com/products/807 ]
+       [ http://www.ti.com/lit/ds/symlink/l293d.pdf http://www.adafruit.com/products/807 ]
 - - - [Option 2: Arduino Only] Seeed Studio Motor Shield (or any motor shield that fits) 
        [ http://www.seeedstudio.com/depot/motor-shield-p-913.html ]
 - - - [Option 3: Raspberry Pi Only] Gertboard 
