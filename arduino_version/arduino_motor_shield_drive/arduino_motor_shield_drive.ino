@@ -1,5 +1,5 @@
 // Amber Fechko, quick and dirty motor/button solution for peristaltic pump driver.
-// amber@kelpforest.org
+// amber@dendriticspine.com
 
 int buttonPin = 4;              // which pin is the button switch connected to?
 int pinI1 = 8;                  // motor shield interface I1
